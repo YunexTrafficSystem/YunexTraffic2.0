@@ -84,7 +84,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
 
                             <MenuItem onClick={handleClose}>
                                 <Button variant="text" onClick={handleClickOpen1}>
-                                    editar Perfil
+                                    Editar Perfil
                                 </Button>
                             </MenuItem>
                         </Menu>

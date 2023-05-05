@@ -4,6 +4,7 @@ import { Button, Grid, Typography, IconButton, ButtonGroup, Box, CssBaseline, Co
 import { theme } from '../../themes/basicColor';
 
 
+
 const useStyles = makeStyles(theme => ({
   main: {
     backgroundColor: "#E2EDF3"
@@ -81,44 +82,45 @@ export const Home = () => {
 
         {/* Body */}
         {/**Fondo*/}
-        <Grid margin='7%' >
+        <Box sx={{minHeight:'100%', display:'flex', position:'relative', marginBottom:'4%', }}>
+          <Grid margin='7%' >
 
-          {/**Contenedor de la imagen y el texto*/}
-          <Grid container spacing={2} padding="1%">
-            {/**Configuración del texto según el tamaño de la pantalla*/}
-            <Grid item xs={12} sm={12} md={6} padding="2%">
-              {/* Texto del body */}
-              <Typography component='h1' variant='h3' align='center' color='text.ligthgreen' gutterBottom >
-                The Yunex Traffic System
-              </Typography>
-              <Typography variant='p' align='center' color='text.secondary' component='p'>
-                Software desarrollado con el objetivo de optimizar y facilitar los procesos de las áreas de trabajo que componen la empresa Yunex Traffic.
-              </Typography>
-              <Grid
-                container
-                justifyContent='center'
-              >
+            {/**Contenedor de la imagen y el texto*/}
+            <Grid container spacing={2} padding="1%"  >
+              {/**Configuración del texto según el tamaño de la pantalla*/}
+              <Grid item xs={12} sm={12} md={6} padding="7%">
+                {/* Texto del body */}
+                <Typography component='h1' variant='h3' align='center' color='#3EEB92' gutterBottom >
+                  The Yunex Traffic System
+                </Typography>
+                <Typography variant='p' align='center' color='text.primary' component='p'paddingTop={5}>
+                  Software desarrollado con el objetivo de optimizar y facilitar los procesos de las áreas de trabajo que componen la empresa Yunex Traffic.
+                </Typography>
                 <Grid
-                  item
+                  container
+                  justifyContent='center'
                 >
-                  {/**Redireccionamiento al login*/}
-                  <Button
-                    variant='contained'
-                    sx={{ marginTop: 5 }}
-                    href='Login'
+                  <Grid
+                    item
                   >
-                    Iniciar ahora
-                  </Button>
+                    {/**Redireccionamiento al login*/}
+                    <Button
+                      variant='contained'
+                      sx={{ marginTop: 5 }}
+                      href='https://www.yunextraffic.com/worldwide/colombia/'
+                    >
+                      Sobre Nosotros
+                    </Button>
+                  </Grid>
                 </Grid>
               </Grid>
+              {/**Imagen del body*/}
+              <Grid item sm={12} xs={12} md={6} align="center">
+                <img src='../img/yunex.jpg' alt='' width='80%' height='100%' />
+              </Grid>
             </Grid>
-            {/**Imagen del body*/}
-            <Grid item sm={12} xs={12} md={6} align="center">
-              <img src='../img/yunex.jpg' alt='' width='450px' height='250' />
-            </Grid>
-          </Grid>
-        </Grid >
-
+          </Grid >
+        </Box>
         {/* Footer */}
         <Box sx={{ backgroundColor: 'black' }}>
           <CssBaseline />

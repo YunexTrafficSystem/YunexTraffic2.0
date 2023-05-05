@@ -35,121 +35,121 @@ export const BasicDesing = ({ children, tittle = '' }) => {
 
     return (
         <ThemeProvider theme={theme}>
-            {/* Nabvar */}
-            <AppBar position='static'>
-                <Box backgroundColor='white'>
-                    <Toolbar
-                        size="large"
-                        edge='start'
-                        aria-label='menú'
-                        sx={{ mr: 2 }}
-                    >
-                        <IconButton
-                            sx={{ m: 10, display: { md: 'none' } }}
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClick}
+                {/* Nabvar */}
+                <AppBar position='static'>
+                    <Box backgroundColor='white'>
+                        <Toolbar
+                            size="large"
+                            edge='start'
+                            aria-label='menú'
+                            sx={{ mr: 2 }}
                         >
-                        </IconButton>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                            <MenuItem onClick={handleClose}><Button variant="text" href="/">
-                                Inicio
-                            </Button></MenuItem>
+                            <IconButton
+                                sx={{ m: 10, display: { md: 'none' } }}
+                                id="basic-button"
+                                aria-controls={open ? 'basic-menu' : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open ? 'true' : undefined}
+                                onClick={handleClick}
+                            >
+                            </IconButton>
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                }}
+                            >
+                                <MenuItem onClick={handleClose}><Button variant="text" href="/">
+                                    Inicio
+                                </Button></MenuItem>
 
-                            <MenuItem onClick={handleClose}><Button variant="text" href="SignUp">
-                                Registrarse
-                            </Button></MenuItem>
+                                <MenuItem onClick={handleClose}><Button variant="text" href="SignUp">
+                                    Registrarse
+                                </Button></MenuItem>
 
-                            <MenuItem onClick={handleClose}><Button variant="text" href="Login">
-                                Iniciar Sesión
-                            </Button></MenuItem>
-                        </Menu>
+                                <MenuItem onClick={handleClose}><Button variant="text" href="Login">
+                                    Iniciar Sesión
+                                </Button></MenuItem>
+                            </Menu>
 
-                        <Grid sx={{ m: 4, flexGrow: 1 }}>
-                            <img src='./img/logoYunex.png' alt='' width='100px' height='40px' />
-                        </Grid>
-                        <Grid justifyContent='space-between'>
-                            <Grid container direction='row' justifycontent='end' >
-                                <ButtonGroup variant="contained" aria-label="contained primary button group" >
-                                    <Button href="Home" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>INICIO</Button>
-                                    <Button href="Register" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>REGISTRARSE</Button>
-                                    <Button href="Login" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>INICIAR SESIÓN</Button>
-                                </ButtonGroup>
+                            <Grid sx={{ m: 4, flexGrow: 1 }}>
+                                <img src='./img/logoYunex.png' alt='' width='100px' height='40px' />
+                            </Grid>
+                            <Grid justifyContent='space-between'>
+                                <Grid container direction='row' justifycontent='end' >
+                                    <ButtonGroup variant="contained" aria-label="contained primary button group" >
+                                        <Button href="Home" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>INICIO</Button>
+                                        <Button href="Register" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>REGISTRARSE</Button>
+                                        <Button href="Login" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>INICIAR SESIÓN</Button>
+                                    </ButtonGroup>
+                                </Grid>
+                            </Grid>
+                        </Toolbar>
+                    </Box>
+                </AppBar>
+                {/* Fin del nabvar */}
+
+                {/* Body */}
+                {/**Color fondo*/}
+                <Grid className={classes.main} padding='4%'>
+
+                    <Grid container  >
+                        {/**Card que contiene el formulario*/}
+                        <Box backgroundColor='white' paddingTop='3%' width='50%' margin='auto' boxShadow='0px 3px 3px black' color='inherit' sx={{ display: 'flex', justifyContent: 'space-between'}}>
+
+                            {/**Ícono y titulo*/}
+                            <Grid item xs={12} sm={12} >
+                                <Avatar sx={{ bgcolor:'primary.main', margin: 'auto'}}>
+                                    <AccountCircleOutlined color='black'/>
+                                </Avatar>
+                                <Typography component='h1' variant='h5' align='center' marginBottom={3} marginTop={4}>
+                                    {tittle}
+                                </Typography>
+
+                                {children}
+
+                            </Grid>
+                        </Box>
+                    </Grid>
+                </Grid>
+                {/* Fin del body */}
+
+
+                {/* Footer */}
+                <Box sx={{ backgroundColor: 'black' }}>
+                    <CssBaseline />
+                    <Container >
+                        <Grid container padding='3%' >
+
+                            <Grid item sm={3} xs={12}>
+                                <Typography variant='body2' align='center' color='white'>
+                                    Compliace
+                                </Typography>
+                            </Grid>
+                            <Grid item sm={3} xs={12}>
+                                <Typography variant='body2' align='center' color='white'>
+                                    For Suppliers
+                                </Typography>
+                            </Grid>
+
+                            <Grid item sm={3} xs={12}>
+                                <Typography variant='body2' align='center' color='white'>
+                                    Data Privacy & Cookies
+                                </Typography>
+                            </Grid>
+
+                            <Grid item sm={3} xs={12}>
+                                <Typography variant='body2' align='center' color='white'>
+                                    Impripmit
+                                </Typography>
                             </Grid>
                         </Grid>
-                    </Toolbar>
+                    </Container>
                 </Box>
-            </AppBar>
-            {/* Fin del nabvar */}
-
-            {/* Body */}
-            {/**Color fondo*/}
-            <Grid className={classes.main} padding='4%'>
-
-                <Grid container >
-                    {/**Card que contiene el formulario*/}
-                    <Box backgroundColor='white' padding='2%' width='500px' margin='auto' boxShadow='0px 3px 3px black' color='inherit' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-
-                        {/**Ícono y titulo*/}
-                        <Grid item xs={12} sm={12}>
-                            <Avatar sx={{ bgcolor:'primary.main', margin: 'auto'}}>
-                               <AccountCircleOutlined color='black'/>
-                            </Avatar>
-                            <Typography component='h1' variant='h5' align='center' marginBottom={4} marginTop={2}>
-                                {tittle}
-                            </Typography>
-
-                            {children}
-
-                        </Grid>
-                    </Box>
-                </Grid>
-            </Grid>
-            {/* Fin del body */}
-
-
-            {/* Footer */}
-            <Box sx={{ backgroundColor: 'black' }}>
-                <CssBaseline />
-                <Container >
-                    <Grid container padding='3%' >
-
-                        <Grid item sm={3} xs={12}>
-                            <Typography variant='body2' align='center' color='white'>
-                                Compliace
-                            </Typography>
-                        </Grid>
-                        <Grid item sm={3} xs={12}>
-                            <Typography variant='body2' align='center' color='white'>
-                                For Suppliers
-                            </Typography>
-                        </Grid>
-
-                        <Grid item sm={3} xs={12}>
-                            <Typography variant='body2' align='center' color='white'>
-                                Data Privacy & Cookies
-                            </Typography>
-                        </Grid>
-
-                        <Grid item sm={3} xs={12}>
-                            <Typography variant='body2' align='center' color='white'>
-                                Impripmit
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </Container>
-            </Box>
-            {/* Fin del footer */}
+                {/* Fin del footer */}
         </ThemeProvider>
     )
 }

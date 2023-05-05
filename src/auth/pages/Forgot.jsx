@@ -29,18 +29,19 @@ export const Forgot = () => {
     <BasicDesing tittle='RECUPERAR CONTRASEÑA'>
       <form>
         {/**Box que configura la validacion de los datos ingresados del formulario */}
-        <Box component='form' onSubmit={handleSubmit(onSubmit)} noValidate sx={{ mt: 1 }}>
+        <Box component='form' onSubmit={handleSubmit(onSubmit)} noValidate sx={{ mt: 1, padding:'6%', alignItems:'center', ml:6 }}>
 
           {/**Grid que configura como se ve los cuadros donde se ingresan los datos del formulario según el tamaño de la pantalla */}
-          <Grid item xs={12} sm={12}>
+          <Grid item xs={12} sm={11}>
 
             {/**Cuadro donde el Interesado ingresara su Correo Electrónico */}
             <TextField
-              margin='normal'
+              margin='dense'
               required
               fullWidth
               type='email'
               label='Correo Electronico'
+              sx={{boxShadow:1, marginTop:'2%'}}
               autoComplete='email'
               autoFocus
               {...register('email', { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
@@ -51,14 +52,14 @@ export const Forgot = () => {
               type='submit'
               fullWidth
               variant='contained'
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 4, mb: 2 }}
             >
               Aceptar
             </Button>
 
 
             {/*Grid que contiene las opciones de regresar y de registrar */}
-            <Grid container>
+            <Grid container alignItems='bottom' sx={{ mt: 7, mb:6}}>
 
               {/**Link esta etiqueta lo enviara al Home  */}
               <Grid item xs>

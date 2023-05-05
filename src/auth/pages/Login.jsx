@@ -31,56 +31,61 @@ export const Login = () => {
         <BasicDesing tittle='INICIO DE SESIÓN'>
             <form>
                 {/**validacion de los datos ingresados del formulario */}
-                <Box component='form' onSubmit={handleSubmit(onSubmit)} noValidate >
+                <Box component='form' onSubmit={handleSubmit(onSubmit)} noValidate sx={{ mt: 1, padding:'5%', alignItems:'center'}} >
                     {/* Estrucura del formulario */}
-                    <Grid item xs={12} sm={12}>
-                        <TextField
-                            variant='outlined'
-                            margin='dense'
-                            required
-                            fullWidth
-                            type='email'
-                            label='Correo Electrónico'
-                            autoFocus
-                            {...register('email', { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
-                        />
-                        <TextField
-                            margin='dense'
-                            required
-                            fullWidth
-                            label='Contraseña'
-                            type='password'
-                            id='password'
-                            {...register('password', { required: true, minLength: 8, maxLength: 20 })}
-                        />
-                        <Grid
-                            container
-                            justifyContent='center'
-                        >
+                    <Grid container margin={1}   >
+                        <Grid item xs={12} sm={12}>
+                            <TextField
+                                variant='outlined'
+                                margin='dense'
+                                required
+                                fullWidth
+                                type='email'
+                                label='Correo Electrónico'
+                                sx={{boxShadow:1}}
+                                autoFocus
+                                {...register('email', { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
+                            />
+                            <TextField
+                                margin='dense'
+                                required
+                                fullWidth
+                                label='Contraseña'
+                                sx={{boxShadow:1, marginTop:'3%'}}
+                                type='password'
+                                id='password'
+                                {...register('password', { required: true, minLength: 8, maxLength: 20 })}
+                            />
                             <Grid
-                                item
+                                container
+                                justifyContent='center'
                             >
-                                <Button
-                                    type='submit'
-                                    variant='contained'
-                                    sx={{ mt: 3, mb: 2 }}
+                                <Grid
+                                    item
                                 >
-                                    Ingresar
-                                </Button>
+                                    <Button
+                                        type='submit'
+                                        variant='contained'
+                                        sx={{ mt: 3, mb: 2 }}
+                                        
+                                    >
+                                        Ingresar
+                                    </Button>
+                                </Grid>
                             </Grid>
-                        </Grid>
 
-                        {/**Opciones al final del formulario*/}
-                        <Grid container alignItems='bottom'>
-                            <Grid item xs>
-                                <Link variant='body2' to='/forgot' underline='none' component={RouterLink}>
-                                    Olvide mi contraseña
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link variant='body2' to='/Register' underline='none' component={RouterLink} >
-                                    No tengo cuenta
-                                </Link>
+                            {/**Opciones al final del formulario*/}
+                            <Grid container alignItems='bottom' sx={{ mt: 5}}>
+                                <Grid item xs>
+                                    <Link variant='body2' to='/forgot' underline='none' component={RouterLink}>
+                                        Olvide mi contraseña
+                                    </Link>
+                                </Grid>
+                                <Grid item>
+                                    <Link variant='body2' to='/Register' underline='none' component={RouterLink} >
+                                        No tengo cuenta
+                                    </Link>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>

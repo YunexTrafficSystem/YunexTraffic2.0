@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Button, Grid, IconButton, Menu, MenuItem, Toolbar } from "@mui/material";
+import { AppBar, Button, Grid, Box, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
 import { ExitToAppOutlined, PersonSharp } from "@mui/icons-material";
 import { ThemeProvider } from "styled-components";
 import { useState } from "react";
@@ -50,45 +50,50 @@ export const NavBar = ({ drawerWidth = 240 }) => {
     return (
         < ThemeProvider theme={theme}>
             <AppBar
-                position="fixed"
-                sx={{ color: 'p', ml: { sm: `${drawerWidth}px` }, zIndex: 1, backgroundColor: "white" }} >
-                <Toolbar>
+            position="fixed"
+            sx={{ color:'p',ml: { md: `${ drawerWidth }px`}, zIndex: 1}} >
+                <Box backgroundColor='#e2edf3'>
+                <Toolbar >
                     <IconButton
                         edge='start'
                         color='inherit'
                         aria-label='abierto drawer'
                         onClick={toggleDrawer}
                         sx={{
-                            mr: 4, display: { sm: 'none' }
+                            mr: 4, display: { md:'none', sm:'flex' }
                         }}>
                     </IconButton>
                     <Grid container direction='row' justifyContent='space-between' alignItems='center'>
-                        <Grid sx={{ m: 5, flexGrow: 1 }}>
-                            <img src='../img/logoYunex.png' alt='' width='100px' height='40px' />
+                        <Grid sx={{ m: 4, flexGrow: 1, width:'5%'}}>
+                            <img src='../img/logoYunex.png' alt='' width='90px' height='40px' />
                         </Grid>
-                        <Grid>
+                        <Grid sx={{width:{lg:'80%', md:'70%', sm:'60%', xs:'50%'}}} width='70%' height='40px'textAlign={'left'}>
+                            <Typography>Juan Pablo Gómez</Typography>
+                        </Grid>
+                        <Grid item  >
                             <PersonSharp onClick={handleClick} sx={{ mr: 3, color: "primary.main" }} fontSize="large" />
                             <ExitToAppOutlined sx={{ mr: 5, color: "primary.main" }} fontSize="large" />
-                        </Grid>
-                        <Menu
-                            anchorEl={anchorEl}
-                            open={abierto}
-                            onClose={handleClose}
-                        >
-                            <MenuItem onClick={handleClose}>
-                                <Button variant="text" href="/">
-                                    Inicio
-                                </Button>
-                            </MenuItem>
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={abierto}
+                                onClose={handleClose}
+                            >
+                                <MenuItem onClick={handleClose}>
+                                    <Button variant="contained" href="/">
+                                        Inicio
+                                    </Button>
+                                </MenuItem>
 
-                            <MenuItem onClick={handleClose}>
-                                <Button variant="text" onClick={handleClickOpen1}>
-                                    editar Perfil
-                                </Button>
-                            </MenuItem>
-                        </Menu>
+                                <MenuItem onClick={handleClose}>
+                                    <Button variant="contained" onClick={handleClickOpen1}>
+                                        Editar Perfil
+                                    </Button>
+                                </MenuItem>
+                            </Menu>
+                        </Grid>
                     </Grid>
                 </Toolbar>
+                </Box>
             </AppBar>
         </ThemeProvider >
     )

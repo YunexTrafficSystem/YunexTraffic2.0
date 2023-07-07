@@ -2,8 +2,8 @@ import { Box, Container, Grid, Typography } from "@mui/material"
 
 export const Footer = () => {
     return (
-        <Box
-            sx={{ backgroundColor: 'black', position: 'fixed', bottom: 0, width: '100%'}}>
+        <Box 
+        sx={{ backgroundColor: 'black',position:'absolute', bottom: 0, width:'100%', zIndex:1, height:'250'}} >
             <Container >
                 <Grid container padding='3%' >
 

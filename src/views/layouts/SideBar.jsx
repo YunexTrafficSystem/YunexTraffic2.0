@@ -11,7 +11,11 @@ const drawerWidth = 240;
 
 export const SideBar = () => {
 
-
+    const [Men, setMen] = useState(false)
+    const handleMen = () => {
+        const NewOpen = !Men
+        setMen(NewOpen)
+    }
     const [lab, setLab] = useState(false)
     const handleLab = () => {
         const NewOpen = !lab
@@ -37,14 +41,22 @@ export const SideBar = () => {
                 sx={{
                     zIndex: 0,
                     flexDirection: 'column',
-                    postion: 'fixed',
+                    postion: 'absolute',
                     width: drawerWidth,
                     flexShrink: 0,
-                    [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', backgroundColor: 'primary.main', height: '100%', zIndex: 1 },
+                    display: { xs:'none', md:'flex' },
+                    [`& .MuiDrawer-paper`]: { width: drawerWidth, paddingBottom:'10%', boxSizing: 'border-box', backgroundColor: 'primary.main' },
                 }}
             >
-                <Toolbar postion='fixed' sx={{ marginTop: 8 }} />
+                <Toolbar sx={{ marginTop: 8 }} />
                 <Box sx={{ backgroundColor: '#3eeb92'}}>
+
+                <ListItemButton onClick={handleMen}>
+                    <ListItemText primary="Menu" align="center" onClick={() => { props.onClick(1); }} />
+                    {Men ? <ExpandLess /> : <ExpandMore />}
+                </ListItemButton>
+
+                <Collapse in={Men} timeout="auto" unmountOnExit>
                     <ListItemButton onClick={handleLab}>
                         <ListItemIcon>
                             <ContentPaste />
@@ -99,7 +111,7 @@ export const SideBar = () => {
                         {ehs ? <ExpandLess /> : <ExpandMore />}
                     </ListItemButton>
 
-                    <Collapse in={ehs} timeout="auto" unmountOnExit>
+                    <Collapse in={ehs} timeout="auto" unmountOnExit >
                         <List component="div" disablePadding>
                             <ListItemButton sx={{ pl: 4 }} onClick={() => { props.onClick(8); }}>
                                 <ListItemText primary="Datos Personales" align="center" />
@@ -117,6 +129,8 @@ export const SideBar = () => {
                                 <ListItemText primary="Inventario" align="center" />
                             </ListItemButton>
                         </List>
+                    </Collapse>
+
                     </Collapse>
                 </Box>
             </Drawer>

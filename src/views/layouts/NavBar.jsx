@@ -4,22 +4,22 @@ import { ExitToAppOutlined, PersonSharp } from "@mui/icons-material";
 import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import { theme } from "../../themes/basicColor";
-import { makeStyles} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     main: {
-      backgroundColor: '#e2edf3',
+        backgroundColor: '#e2edf3',
     },
     card: {
-      backgroundColor: '#ffffff',
+        backgroundColor: '#ffffff',
     },
     green: {
-      backgroundColor: '#3EEB92'
+        backgroundColor: '#3EEB92'
     },
-  
-  }));
+
+}));
 
 
 export const NavBar = ({ drawerWidth = 240 }) => {
@@ -50,9 +50,8 @@ export const NavBar = ({ drawerWidth = 240 }) => {
     return (
         < ThemeProvider theme={theme}>
             <AppBar
-            
-            position="fixed"
-            sx={{ color:'p', ml: { sm: `${ drawerWidth }px`}, zIndex: 1}} >
+                position="fixed"
+                sx={{ color: 'p', ml: { sm: `${drawerWidth}px` }, zIndex: 1, backgroundColor: "white" }} >
                 <Toolbar>
                     <IconButton
                         edge='start'
@@ -69,7 +68,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
                         </Grid>
                         <Grid>
                             <PersonSharp onClick={handleClick} sx={{ mr: 3, color: "primary.main" }} fontSize="large" />
-                            <ExitToAppOutlined sx={{ mr: 25, color: "primary.main" }} fontSize="large" />
+                            <ExitToAppOutlined sx={{ mr: 5, color: "primary.main" }} fontSize="large" />
                         </Grid>
                         <Menu
                             anchorEl={anchorEl}

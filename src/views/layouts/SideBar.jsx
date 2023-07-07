@@ -38,14 +38,13 @@ export const SideBar = () => {
                     zIndex: 0,
                     flexDirection: 'column',
                     postion: 'fixed',
-                    display: 'flex',
                     width: drawerWidth,
                     flexShrink: 0,
-                    [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', backgroundColor: 'primary.main' },
+                    [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', backgroundColor: 'primary.main', height: '100%', zIndex: 1 },
                 }}
             >
-                <Toolbar sx={{ marginTop: 8 }} />
-                <Box sx={{ backgroundColor: '#3eeb92' }}>
+                <Toolbar postion='fixed' sx={{ marginTop: 8 }} />
+                <Box sx={{ backgroundColor: '#3eeb92'}}>
                     <ListItemButton onClick={handleLab}>
                         <ListItemIcon>
                             <ContentPaste />

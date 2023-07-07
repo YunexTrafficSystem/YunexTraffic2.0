@@ -11,13 +11,13 @@ export const Base = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
 
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex'}}>
 
         <NavBar />
 
         <SideBar />
 
-        <Box component='main' sx={{ flexGrow: 1, p: 3  }}>
+        <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
 
           {/* Toolbar */}
 

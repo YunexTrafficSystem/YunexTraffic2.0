@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { AppRouter } from "./routes/AppRouter";
+import { AppRouter } from "./controllers/AppRouter";
 import { BrowserRouter } from 'react-router-dom';
 import { theme } from './themes/basicColor';
 

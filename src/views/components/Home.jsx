@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Grid, Typography, IconButton, ButtonGroup, Box, CssBaseline, Container, ThemeProvider, Menu, MenuItem, AppBar, Toolbar } from '@mui/material';
+import { Button, Grid, Typography, IconButton, ButtonGroup, Box, CssBaseline, 
+  Container, ThemeProvider, Menu, MenuItem, AppBar, Toolbar } from '@mui/material';
 import { theme } from '../../themes/basicColor';
 
 
@@ -14,15 +15,12 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export const Home = () => {
-  {/**Se declara la variable para que contenga la informacion donde se personalizó los colores */ }
   const classes = useStyles();
 
-
-  /////////////
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setAnchorEl(event.currentTarget);image.png
   };
   const handleClose = () => {
     setAnchorEl(null);
